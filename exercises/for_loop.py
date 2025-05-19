@@ -17,5 +17,10 @@ def sum_numbers(n):
     返回:
     - 从1到n的所有整数之和
     """
+    total = 0
     # 请在下方编写代码
+    for i in range(1, n+1):
+        total += i
+
+    return total
     pass 

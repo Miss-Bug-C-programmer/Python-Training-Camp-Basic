@@ -20,4 +20,26 @@ def student_list_operations(students, operation, *args):
     - 操作后的学生列表
     """
     # 请在下方编写代码
+    if operation == "add":
+        if len(args) != 1:
+            raise ValueError("添加操作需要1个参数")
+        students.append(args[0])
+        
+    elif operation == "remove":
+        if len(args) != 1:
+            raise ValueError("删除操作需要1个参数")
+        students.remove(args[0])
+            
+    elif operation == "update":
+        if len(args) != 2:
+            raise ValueError("更新操作需要2个参数")
+        old_value, new_value = args
+        if old_value in students:
+            index = students.index(old_value)
+        students[index] = new_value
+            
+    else:
+        raise ValueError("无效操作，支持的操作类型: add/remove/update")
+    
+    return students
     pass 
